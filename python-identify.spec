@@ -3,7 +3,7 @@
 
 Name:		python-%{pypi_name}
 Version:	1.5.12
-Release:	3
+Release:	4
 Summary:	File identification library for Python
 Group:		Development/Python
 License:	MIT
