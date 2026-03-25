@@ -1,15 +1,16 @@
-%global pypi_name identify
+%define module identify
 
-Name:		python-%{pypi_name}
-Version:	2.6.15
+Name:		python-identify
+Version:	2.6.18
 Release:	1
 Summary:	File identification library for Python
 Group:		Development/Python
 License:	MIT
 URL:		https://github.com/pre-commit/identify
-Source0:	https://files.pythonhosted.org/packages/source/i/identify/identify-%{version}.tar.gz
-BuildArch:	noarch
+Source0:	https://files.pythonhosted.org/packages/source/i/identify/identify-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+
 BuildSystem:	python
+BuildArch:	noarch
 BuildRequires:	python%{pyver}dist(setuptools)
 
 %description
@@ -18,9 +19,13 @@ File identification library for Python.
 Given a file (or some information about a file), return a set of
 standardized tags identifying what the file is.
 
-%files -n python-%{pypi_name}
+%prep -a
+# Remove bundled egg-info
+rm -rf %{module}.egg-info
+
+%files
 %license LICENSE identify/vendor/licenses.py
 %doc README.md
 %{_bindir}/identify-cli
-%{python_sitelib}/%{pypi_name}
-%{python_sitelib}/%{pypi_name}-%{version}-py%{pyver}.egg-info
+%{python_sitelib}/%{module}
+%{python_sitelib}/%{module}-%{version}-py%{pyver}.egg-info
