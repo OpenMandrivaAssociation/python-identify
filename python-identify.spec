@@ -1,7 +1,7 @@
 %define module identify
 
 Name:		python-identify
-Version:	2.6.18
+Version:	2.6.19
 Release:	1
 Summary:	File identification library for Python
 Group:		Development/Python
@@ -24,8 +24,8 @@ standardized tags identifying what the file is.
 rm -rf %{module}.egg-info
 
 %files
-%license LICENSE identify/vendor/licenses.py
 %doc README.md
+%license LICENSE
 %{_bindir}/identify-cli
 %{python_sitelib}/%{module}
-%{python_sitelib}/%{module}-%{version}-py%{pyver}.egg-info
+%{python_sitelib}/%{module}-%{version}*.*-info
