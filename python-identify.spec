@@ -1,7 +1,7 @@
 %define module identify
 
 Name:		python-identify
-Version:	2.6.19
+Version:	2.6.20
 Release:	1
 Summary:	File identification library for Python
 Group:		Development/Python
